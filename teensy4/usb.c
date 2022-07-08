@@ -13,7 +13,7 @@
 //#include "usb_audio.h"
 //#include "usb_mtp.h"
 #include "core_pins.h" // for delay()
-//#include "avr/pgmspace.h"
+#include "sections.h"
 #include <string.h>
 #include "debug/printf.h"
 

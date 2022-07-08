@@ -1,7 +1,7 @@
 #include "imxrt.h"
 #include "core_pins.h"
 #include "debug/printf.h"
-//#include "avr/pgmspace.h"
+#include "sections.h"
 
 static uint8_t calibrating;
 static uint8_t analog_config_bits = 10;

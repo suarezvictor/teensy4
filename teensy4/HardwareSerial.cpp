@@ -32,6 +32,7 @@
 #include "core_pins.h"
 #include "Arduino.h"
 //#include "debug/printf.h"
+#include "sections.h"
 
 /*typedef struct {
         const uint32_t VERID;

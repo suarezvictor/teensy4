@@ -103,8 +103,8 @@ ifdef ARDUINOPATH
 # path location for Teensy Loader, teensy_post_compile and teensy_reboot (on Linux)
 TOOLSPATH = $(abspath $(ARDUINOPATH)/hardware/tools)
 
-# path location for Arduino libraries (currently not used)
-LIBRARYPATH = $(abspath $(ARDUINOPATH)/libraries)
+# path location for Arduino libraries
+LIBRARYPATH = $(abspath $(ARDUINOPATH)/hardware/teensy/avr)
 
 # path location for the arm-none-eabi compiler
 COMPILERPATH = $(abspath $(ARDUINOPATH)/hardware/tools/arm/bin)
@@ -116,18 +116,20 @@ COMPILERPATH ?= /usr/bin
 
 endif
 
+INCLUDES = -I$(LIBRARYPATH)/libraries -I$(LIBRARYPATH)/cores/teensy4/
+
 #************************************************************************
 # Settings below this point usually do not need to be edited
 #************************************************************************
 
 # CPPFLAGS = compiler options for C and C++
-CPPFLAGS = -Wall -g -O2 $(CPUOPTIONS) -MMD $(OPTIONS) -I. -ffunction-sections -fdata-sections
+CPPFLAGS = -Wall -g -O2 $(CPUOPTIONS) -MMD $(OPTIONS) $(INCLUDES) -I. -ffunction-sections -fdata-sections
 
 # compiler options for C++ only
 CXXFLAGS = -std=gnu++14 -felide-constructors -fno-exceptions -fpermissive -fno-rtti -Wno-error=narrowing
 
 # compiler options for C only
-CFLAGS =
+CFLAGS = $(INCLUDES)
 
 # linker options
 LDFLAGS = -Os -Wl,--gc-sections,--relax $(SPECS) $(CPUOPTIONS) -T$(MCU_LD)
