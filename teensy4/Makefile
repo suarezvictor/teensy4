@@ -105,6 +105,7 @@ TOOLSPATH = $(abspath $(ARDUINOPATH)/hardware/tools)
 
 # path location for Arduino libraries
 LIBRARYPATH = $(abspath $(ARDUINOPATH)/hardware/teensy/avr)
+LOCALLIBPATH = $(abspath .)/libraries
 
 # path location for the arm-none-eabi compiler
 COMPILERPATH = $(abspath $(ARDUINOPATH)/hardware/tools/arm/bin)
@@ -116,7 +117,7 @@ COMPILERPATH ?= /usr/bin
 
 endif
 
-INCLUDES = -I$(LIBRARYPATH)/libraries -I$(LIBRARYPATH)/cores/teensy4/
+INCLUDES = -I$(LOCALLIBPATH) -I$(LIBRARYPATH)/libraries -I$(LIBRARYPATH)/cores/teensy4/
 
 #************************************************************************
 # Settings below this point usually do not need to be edited
