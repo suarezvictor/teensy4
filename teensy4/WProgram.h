@@ -30,7 +30,7 @@
 
 #ifndef WProgram_h
 #define WProgram_h
-
+#include "imxrt.h"
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
@@ -38,34 +38,34 @@
 // some libraries and sketches depend on this
 // AVR stuff, assuming Arduino.h or WProgram.h
 // automatically includes it...
-#include <avr/pgmspace.h>
-#include <avr/interrupt.h>
+//#include <avr/pgmspace.h>
+//#include <avr/interrupt.h>
 
-#include "avr_functions.h"
+//#include "avr_functions.h"
 #include "wiring.h"
 #include "HardwareSerial.h"
 
 #ifdef __cplusplus
 
-#include "avr_emulation.h"
+//#include "avr_emulation.h"
 #include "usb_serial.h"
 #include "usb_seremu.h"
-#include "usb_keyboard.h"
-#include "usb_mouse.h"
-#include "usb_joystick.h"
-#include "usb_midi.h"
+//#include "usb_keyboard.h"
+//#include "usb_mouse.h"
+//#include "usb_joystick.h"
+//#include "usb_midi.h"
 #include "usb_rawhid.h"
-#include "usb_flightsim.h"
+//#include "usb_flightsim.h"
 //#include "usb_mtp.h"
-#include "usb_audio.h"
-#include "usb_touch.h"
+//#include "usb_audio.h"
+//#include "usb_touch.h"
 //#include "usb_undef.h" // do not allow usb_desc.h stuff to leak to user programs
 
 #include "WCharacter.h"
 #include "WString.h"
 #include "elapsedMillis.h"
 #include "IntervalTimer.h"
-#include "CrashReport.h"
+//#include "CrashReport.h"
 
 uint16_t makeWord(uint16_t w);
 uint16_t makeWord(byte h, byte l);

@@ -1,6 +1,12 @@
 #pragma once
 #include <stdint.h>
 
+#define DMAMEM __attribute__ ((section(".dmabuffers"), used))
+#define FASTRUN __attribute__ ((section(".fastrun") ))
+#define PROGMEM __attribute__((section(".progmem")))
+#define FLASHMEM __attribute__((section(".flashmem")))
+#define EXTMEM __attribute__((section(".externalram")))
+
 // Definitions based these documents:
 //   i.MX RT1060 Reference Manual, Rev. 2, 12/2019 - https://www.pjrc.com/teensy/datasheets.html
 //   ARM v7-M Architecture Reference Manual (DDI 0403E.b)

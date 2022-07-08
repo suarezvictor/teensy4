@@ -28,14 +28,14 @@
 # SOFTWARE.
 
 # Use these lines for Teensy 4.0
-MCU = IMXRT1062
-MCU_LD = imxrt1062.ld
-MCU_DEF = ARDUINO_TEENSY40
+#MCU = IMXRT1062
+#MCU_LD = imxrt1062.ld
+#MCU_DEF = ARDUINO_TEENSY40
 
 # Use these lines for Teensy 4.1
-#MCU = IMXRT1062
-#MCU_LD = imxrt1062_t41.ld
-#MCU_DEF = ARDUINO_TEENSY41
+MCU = IMXRT1062
+MCU_LD = imxrt1062_t41.ld
+MCU_DEF = ARDUINO_TEENSY41
 
 # The name of your project (used to name the compiled .hex file)
 TARGET = main
@@ -95,7 +95,7 @@ CPUOPTIONS = -mcpu=cortex-m7 -mfloat-abi=hard -mfpu=fpv5-d16 -mthumb
 # the NO_ARDUINO behaviour.
 ifndef NO_ARDUINO
 # Path to your arduino installation
-ARDUINOPATH ?= ../../../../..
+ARDUINOPATH ?= ../../../../../tools/arduino-1.8.19/
 endif
 
 ifdef ARDUINOPATH

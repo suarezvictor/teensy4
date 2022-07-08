@@ -30,29 +30,29 @@
 
 #include <Arduino.h>
 
-extern "C" int main(void)
-{
 #ifdef USING_MAKEFILE
 
-	// To use Teensy 4.0 without Arduino, simply put your code here.
-	// For example:
+void setup()
+{
+	pinMode(LED_BUILTIN, OUTPUT);
+}
 
-	pinMode(13, OUTPUT);
-	while (1) {
-		digitalWriteFast(13, HIGH);
-		delay(500);
-		digitalWriteFast(13, LOW);
-		delay(500);
-	}
+void loop()
+{
+	digitalWriteFast(LED_BUILTIN, HIGH);
+	delay(250);
+	digitalWriteFast(LED_BUILTIN, LOW);
+	delay(250);
+}
 
+#endif
 
-#else
-	// Arduino's main() function just calls setup() and loop()....
+extern "C" int main(void)
+{
 	setup();
 	while (1) {
 		loop();
 		yield();
 	}
-#endif
 }
 
